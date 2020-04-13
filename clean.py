@@ -20,4 +20,3 @@ df_clean = df_clean.drop('Original pages')
 df_clean = df_clean.drop('Flowing text')
 df_clean = df_clean.drop('Flowing text, Google-generated PDF')
 
-print("df_clean dataset is done!")
