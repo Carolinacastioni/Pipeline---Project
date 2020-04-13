@@ -26,8 +26,3 @@ def results(df_results):
 
 df_results = results(df_analisis)
 
-df_results = df_results.iloc[0]
-
-a = df_results['Results_Description']
-b = df_results['Difference between List and Retail price']
-print(a, "The difference between the List Price and the Retail Price is",b,"€")
