@@ -42,3 +42,5 @@ for x in lst_book_info:
         enrich_data = (book['volumeInfo']['title'], book['saleInfo']['saleability'], book['saleInfo']['listPrice'], book['saleInfo']['retailPrice'], book['saleInfo']['buyLink'])
         lst_sales.append(enrich_data)
 
+
+

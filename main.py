@@ -7,9 +7,8 @@ import pandas as pd
 import os
 import json
 import requests
-from dotenv import load_dotenv
 from bs4 import BeautifulSoup
-load_dotenv()
+from argparse import ArgumentParser
 
 #Acquisition
 df = open_file("/home/carolina/Desktop/IRONHACK/Project files/books.csv")
@@ -63,9 +62,24 @@ df_analisis['List price (EUR)'] = df_analisis['List price (EUR)'].astype(float)
 df_analisis['Retail price (EUR)'] = df_analisis['Retail price (EUR)'].astype(float)
 
 #Result
-results = results(df_analisis)
+result = results(df_analisis)
 
-title = input("Please write the book's title: ")
-dataframe_filtrado = results[results['title'] == {title}]
+#Call
+def parse():
+    parser=ArgumentParser(description="This program returns the analysis between list price and retail price of a book")
+    parser.add_argument("--title",dest="title",type=str, help="Write the whole book title.")
+    parser.add_argument("--budget",dest="budget",type=int,help="Write the max. price you will pay for the book.")
+    return parser.parse_args()
 
-print(dataframe_filtrado)
+def main():
+    args = parse()
+    title=args.title
+    budget=args.budget
+    try:
+        print(books_analysis(title,budget))
+    except Exception:
+        print("You must introduce a valid title and budget")
+
+if __name__ == "__main__":
+    main()
+

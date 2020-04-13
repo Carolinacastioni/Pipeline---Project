@@ -8,4 +8,13 @@ def results(df_results):
     df_results.loc[df_results["Results_Description"] == False,"Results_Description"] = "This is not ideal! The retail prices is higher than the list price."
     return df_results
 
-results = results(df_analisis)
+result = results(df_analisis)
+
+def books_analysis(title, budget):
+    new_df = result[result['title'] == str(title)]
+    new_dff = new_df[new_df['Retail price (EUR)'] <= int(budget)]
+    if new_dff.empty == True:
+        return "Sorry, we don't have any book available with this title in this budget"
+    else:
+        return new_dff
+
