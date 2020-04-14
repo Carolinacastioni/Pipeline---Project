@@ -1,3 +1,5 @@
+![](book.jpg)
+
 # Project | Pipelines Project
 
 ## Introduction
