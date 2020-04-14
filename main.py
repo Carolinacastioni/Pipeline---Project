@@ -12,6 +12,7 @@ from argparse import ArgumentParser
 
 #Acquisition
 df = open_file("/home/carolina/Desktop/IRONHACK/Project files/books.csv")
+print("The dataset has been imported")
 
 #Clean
 df_clean = clean(df)
@@ -19,10 +20,11 @@ df_clean = clean(df)
 df_clean = df_clean.drop('Original pages')
 df_clean = df_clean.drop('Flowing text')
 df_clean = df_clean.drop('Flowing text, Google-generated PDF')
+print("The dataset has been cleaned")
 
 #Enrich
 apiKey = os.getenv("booksKey")
-print("WE HAVE APIKEY") if apiKey else print("NO APIKEY FOUND")
+
 
 lst_vid = []
 for e in df_clean.index:
@@ -46,6 +48,8 @@ for x in lst_book_info:
         enrich_data = (book['volumeInfo']['title'], book['saleInfo']['saleability'], book['saleInfo']['listPrice'], book['saleInfo']['retailPrice'], book['saleInfo']['buyLink'])
         lst_sales.append(enrich_data)
 
+print("The dataset has been enriched")
+
 #Analysis
 data = {}
 data['title'] = [e[0] for e in lst_sales]
@@ -60,6 +64,8 @@ df_analisis = pd.merge(df_clean, df_sales_info, on='title')
 
 df_analisis['List price (EUR)'] = df_analisis['List price (EUR)'].astype(float)
 df_analisis['Retail price (EUR)'] = df_analisis['Retail price (EUR)'].astype(float)
+
+print("Please wait while we are analysing the dataset...")
 
 #Result
 result = results(df_analisis)

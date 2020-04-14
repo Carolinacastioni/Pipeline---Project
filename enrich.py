@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 apiKey = os.getenv("booksKey")
-print("WE HAVE APIKEY") if apiKey else print("NO APIKEY FOUND")
+
 
 def getVolumeID(path,queryParams=dict()):
     url = f"https://www.googleapis.com/books/v1/volumes?q=isbn:{path}"
