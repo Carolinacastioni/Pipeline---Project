@@ -1,4 +1,4 @@
-![](book.jpg)
+![](libros.jpg)
 
 # Project | Pipelines Project
 
