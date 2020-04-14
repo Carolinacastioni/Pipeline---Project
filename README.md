@@ -35,5 +35,5 @@ We have merged both dataframes by the book's title and converted into one datafr
 
 ## Main.py
 
-We added all the pipeline mentioned above into this one phase, where the person just need to enter with the Book's title argument in order to get the result if this is a good deal or not and all the additional information of the book, such as the link to buy. 
+We added all the pipeline mentioned above into this one phase, where the person just need to enter with the Book's title and the Budget (the max price he is willing to pay for the book) as arguments in order to get the result if this  books is available for sale in this range price and if it is a good deal or not. Also, the user get more additional information about the book, such as the link to buy. 
 
