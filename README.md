@@ -31,7 +31,7 @@ Now, we have created a dataframe with the sales information provided on the Enri
 
 We have merged both dataframes by the book's title and converted into one dataframe. Finally, we have compare the difference between the List price and the Retail and added this information on the dataframe. We created a final column with results, in which if the Retail price is higher than the List price this is a good deal, and when the list price is higher than the Retail price it's not an ideal deal.
 
-##Main.py
+## Main.py
 
 We added all the pipeline mentioned above into this one phase, where the person just need to enter with the Book's title argument in order to get the result if this is a good deal or not and all the additional information of the book, such as the link to buy. 
 
